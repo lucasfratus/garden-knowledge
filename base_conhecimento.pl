@@ -110,4 +110,40 @@ hipotese(lesma_ou_caracol,
 ).
 
 
+%
+% Doenças
+%
+%
+hipotese(
+    oidio,
+    'Oídio (Erysiphales)',
+    doenca,
+    'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.,'
+    'Aplique fungicida à base de enxofre. Melhore a circulação de ar.'
+).
+
+hipotese(
+    fumagina,
+    'Fumagina',
+    doenca,
+    'Fungo negro que se desenvolve sobre o honeydew excretado por pulgões, cochonilhas ou mosca-branca. Reduz fotossíntese e respiração. Formigas disseminam o fungo.',
+    'Controle as pragas causadoras (pulgões/cochonilhas). Lave as folhas com solução de sabão neutro. Aplique fungicida cúprico.'
+).
+
+hipotese(
+    mancha_foliar,
+    'Manchas Foliares (Fungos/Bactérias)',
+    doenca,
+    'Manchas escuras, aquosas ou com halo amarelo indicam fungos ou bactérias que destroem o tecido foliar. Favorecidas por alta umidade e rega por cima (molhando folhagem).',
+    'Remova as folhas afetadas. Aplique fungicida cúprico ou bactericida. Evite molhar a folhagem ao regar.'
+).
+
+hipotese(
+    mofo_cinzento,
+    'Mofo Cinzento',
+    doenca,
+    'Fungo que causa podridão acinzentada em flores, frutos e folhas. Favorecido por excesso de umidade e ventilação deficiente em ambientes fechados.',
+    'Remova imediatamente as partes afetadas. Aplique fungicida sistêmico. Melhore a ventilação e evite umidade sobre as folhas.'
+).
+
 
