@@ -172,12 +172,13 @@ hipotese(solo_inadequado,
     'Faça análise de pH. Para solo ácido: aplique calcário dolomítico. Para solo alcalino: aplique enxofre agrícola. Considere troca completa do substrato.'
 ).
 
+
 %
 % Sintomas obrigatórios para cada hipótese
 %
 % sintoma_obrigatorio(+HipoteseId, +SintomaId)
 %
-% Se um dos sintomas obrigatórios estiver ausente, a probabilidade da hipótese torna-se zero e é descartada
+% Se um dos sintomas obrigatórios estiver ausente, a probabilidade da hipótese torna-se zero e a hipótese é descartada
 %
 
 % Água
@@ -245,3 +246,125 @@ sintoma_obrigatorio(falta_luz, folhas_pequenas_palidas_cor_verde_fraco).
 % Solo
 sintoma_obrigatorio(solo_inadequado, multiplas_deficiencias_sem_melhora_adubo).
 sintoma_obrigatorio(solo_inadequado, ph_medido_fora_faixa_ideal).
+
+
+%
+% Sintomas opcionais para cada hipótese
+% sintoma_opcional(+HipoteseId, +SintomaId)
+%
+
+% Excesso de água
+sintoma_opcional(excesso_agua, folhas_amarelas).
+sintoma_opcional(excesso_agua, caule_mole_escurecido_base).
+sintoma_opcional(excesso_agua, raizes_escuras_podres_cheiro_ruim).
+sintoma_opcional(excesso_agua, rega_diaria_frequente).
+
+% Falta de água
+sintoma_opcional(falta_agua, bordas_pontas_folhas_secas_marrons).
+sintoma_opcional(falta_agua, folhas_caindo).
+sintoma_opcional(falta_agua, terra_soltando_bordas_vaso).
+sintoma_opcional(falta_agua, solo_secando_rapidamente).
+
+
+
+% Deficiência de nitrogênio
+sintoma_opcional(deficiencia_nitrogenio, folhas_novas_pequenas_palidas).
+sintoma_opcional(deficiencia_nitrogenio, caule_fino_fraco).
+sintoma_opcional(deficiencia_nitrogenio, solo_nao_adubado_meses).
+
+% Deficiência de fosfóro
+sintoma_opcional(deficiencia_fosforo, atraso_florescimento).
+sintoma_opcional(deficiencia_fosforo, folhas_velhas_verde_escuras).
+sintoma_opcional(deficiencia_fosforo, solo_nao_adubado_meses).
+
+% Deficiência de potássio
+sintoma_opcional(deficiencia_potassio, frutos_mal_formados).
+sintoma_opcional(deficiencia_potassio, planta_frequentemente_doente).
+sintoma_opcional(deficiencia_potassio, solo_arenoso_pobre).
+
+% Deficiência de cálcio
+sintoma_opcional(deficiencia_calcio, frutos_podridao_apical).
+sintoma_opcional(deficiencia_calcio, raizes_curtas_escuras).
+sintoma_opcional(deficiencia_calcio, solo_muito_acido).
+
+% Deficiência de magnésio
+sintoma_opcional(deficiencia_magnesio, reducao_crescimento).
+sintoma_opcional(deficiencia_magnesio, folhas_velhas_bronzeadas).
+sintoma_opcional(deficiencia_magnesio, solo_muito_acido).
+sintoma_opcional(deficiencia_magnesio, solo_muito_arenoso).
+
+% Deficiência de ferro
+sintoma_opcional(deficiencia_ferro, solo_calcario_ph_alto).
+sintoma_opcional(deficiencia_ferro, crescimento_muito_lento).
+sintoma_opcional(deficiencia_ferro, folhas_novas_pequenas).
+
+
+
+% Pulgão
+sintoma_opcional(pulgao, folhas_enroladas_deformadas_brotos).
+sintoma_opcional(pulgao, presenca_formigas_plantas).
+sintoma_opcional(pulgao, fumagina_fungo_preto_folhas).
+sintoma_opcional(pulgao, amarelamento_localizado).
+
+% Ácaro
+sintoma_opcional(acaro, folhas_aspecto_bronzeado_envelhecido).
+sintoma_opcional(acaro, clima_quente_seco).
+sintoma_opcional(acaro, queda_prematura_folhas).
+sintoma_opcional(acaro, plantas_enfraquecidas_sem_viço).
+
+% Cochonilha
+sintoma_opcional(cochonilha, fumagina_fungo_preto_folhas).
+sintoma_opcional(cochonilha, presenca_formigas_plantas).
+sintoma_opcional(cochonilha, ramos_enfraquecidos).
+sintoma_opcional(cochonilha, queda_folhas).
+
+% Mosca-branca
+sintoma_opcional(mosca_branca, substancia_pegajosa_melada_folhas).
+sintoma_opcional(mosca_branca, fumagina_fungo_preto_folhas).
+sintoma_opcional(mosca_branca, clima_quente_seco).
+
+% Lesma ou caracol
+sintoma_opcional(lesma_ou_caracol, local_umido_sombreado).
+sintoma_opcional(lesma_ou_caracol, brotacoes_novas_consumidas).
+sintoma_opcional(lesma_ou_caracol, solo_muito_umido).
+
+
+
+% Oídio
+sintoma_opcional(oidio, folhas_amarelando_sob_po_branco).
+sintoma_opcional(oidio, folhas_secas_caindo_apos_po_branco).
+sintoma_opcional(oidio, caules_com_manchas_brancas).
+
+% Fumagina
+sintoma_opcional(fumagina, presenca_formigas_plantas).
+sintoma_opcional(fumagina, substancia_pegajosa_melada_folhas).
+sintoma_opcional(fumagina, folhas_com_aspecto_sujo_enegrecido).
+
+% Mancha foliar
+sintoma_opcional(mancha_foliar, folhas_caindo_com_manchas).
+sintoma_opcional(mancha_foliar, rega_molhando_folhagem).
+sintoma_opcional(mancha_foliar, alta_umidade_ventilacao_ruim).
+
+% Mofo cinzento
+sintoma_opcional(mofo_cinzento, flores_marrons_moles).
+sintoma_opcional(mofo_cinzento, partes_apodrecendo_molengas).
+sintoma_opcional(mofo_cinzento, ambiente_fechado_sem_ar).
+
+
+
+% Excesso de luminosidade
+sintoma_opcional(excesso_luz, planta_sol_direto_mais_6h).
+sintoma_opcional(excesso_luz, bordas_folhas_secas_queimadas).
+sintoma_opcional(excesso_luz, solo_seca_rapidamente).
+
+% Falta de luminosidade
+sintoma_opcional(falta_luz, queda_excessiva_folhas).
+sintoma_opcional(falta_luz, planta_local_escuro_sem_janela).
+sintoma_opcional(falta_luz, flores_nao_aparecem_botoes_caem).
+
+
+
+% Solo inadequado
+sintoma_opcional(solo_inadequado, solo_muito_argiloso_ou_arenoso).
+sintoma_opcional(solo_inadequado, agua_nao_penetra_ou_escoa_demais).
+sintoma_opcional(solo_inadequado, raizes_superficiais_saindo_vaso).
