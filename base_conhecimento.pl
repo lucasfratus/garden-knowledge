@@ -146,4 +146,35 @@ hipotese(
     'Remova imediatamente as partes afetadas. Aplique fungicida sistêmico. Melhore a ventilação e evite umidade sobre as folhas.'
 ).
 
+%
+% Luminosidade
+%
 
+hipotese(
+    excesso_luz,
+    'Queimadura por Excesso de Luz Solar',
+    luminosidade,
+    'Exposição excessiva ao sol direto destrói cloroplastos, causando manchas claras, esbranquiçadas ou amarelas no lado da folha exposto. Mais comum em plantas de sombra expostas ao sol.',
+    'Mova a planta para local com luz indireta ou meia-sombra. Instale sombrite se necessário. Mantenha boa hidratação durante a recuperação.'
+).
+ 
+hipotese(
+    falta_luz,
+    'Falta de Luminosidade / Etiolamento',
+    luminosidade,
+    'Sem luz suficiente, a planta não realiza fotossíntese adequada. O caule cresce estiolado (alongado e fino) em direção à luz, e as folhas ficam pálidas e pequenas.',
+    'Mova para local com mais luz natural. Para ambientes internos sem janelas, use lâmpadas de crescimento (grow lights com espectro completo).'
+).
+
+
+%
+% Solo
+%
+
+hipotese(
+    solo_inadequado,
+    'Solo Inadequado / pH Incorreto',
+    solo,
+    'pH incorreto bloqueia a absorção de nutrientes mesmo com adubação.',
+    'Faça análise de pH. Para solo ácido: aplique calcário dolomítico. Para solo alcalino: aplique enxofre agrícola. Considere troca completa do substrato.'
+).
