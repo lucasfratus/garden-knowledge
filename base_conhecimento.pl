@@ -12,7 +12,7 @@
 hipotese(excesso_agua,
 	 'Excesso de água',
 	 quantidade_agua,
-	 'A planta recebe água em excesso.',
+	 'A planta recebe água em excesso, favorecendo podridões',
 	 'Reduza a frequência da regagem ou a quantidade de água utilizada. Caso a planta esteja em um vazo, verifique as saídas de água.'
 ).
 
@@ -30,7 +30,7 @@ hipotese(falta_agua,
 hipotese(deficiencia_nitrogenio,
 	'Deficiência de nitrogênio',
 	nutricao,
-	'O déficit de nitrogênio causa clorose (perda de pigmento) generalizada, inicialmente nas folhas mais volhas.',
+	'O déficit de nitrogênio causa clorose (perda de pigmento) generalizada, inicialmente nas folhas mais velhas. Causa também redução acentuada do crescimento.',
 	'Aplique adubo nitrogenado ou adubo orgânico. Repita a cada 15 dias.'
 ).
 
@@ -38,7 +38,7 @@ hipotese(deficiencia_nitrogenio,
 hipotese(deficiencia_fosforo,
 	'Deficiência de fósforo',
 	nutricao,
-	'A falta de fósforo causa coloração verde-escura com tons avermelhados ou roxos nas folhas mais antigas, além de redução do crescimento',
+	'A falta de fósforo causa coloração verde-escura com tons avermelhados/roxos nas folhas mais antigas, além de redução do crescimento',
 	'Aplique superfosfato simples ou fosfato natural. Certifique-se de que o pH do solo está entre 6,0 e 7,0 para garantir uma melhor absorção.',
 ).
 
@@ -114,32 +114,28 @@ hipotese(lesma_ou_caracol,
 % Doenças
 %
 
-hipotese(
-    oidio,
+hipotese(oidio,
     'Oídio',
     doenca,
-    'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.,'
+    'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.',
     'Aplique fungicida à base de enxofre. Melhore a circulação de ar.'
 ).
 
-hipotese(
-    fumagina,
+hipotese(fumagina,
     'Fumagina',
     doenca,
     'Fungo negro que se desenvolve sobre o honeydew excretado por pulgões, cochonilhas ou mosca-branca. Reduz fotossíntese e respiração. Formigas disseminam o fungo.',
     'Controle as pragas causadoras (pulgões/cochonilhas). Lave as folhas com solução de sabão neutro. Aplique fungicida cúprico.'
 ).
 
-hipotese(
-    mancha_foliar,
+hipotese(mancha_foliar,
     'Manchas Foliares (Fungos/Bactérias)',
     doenca,
     'Manchas escuras, aquosas ou com halo amarelo indicam fungos ou bactérias que destroem o tecido foliar. Favorecidas por alta umidade e rega por cima (molhando folhagem).',
     'Remova as folhas afetadas. Aplique fungicida cúprico ou bactericida. Evite molhar a folhagem ao regar.'
 ).
 
-hipotese(
-    mofo_cinzento,
+hipotese(mofo_cinzento,
     'Mofo Cinzento',
     doenca,
     'Fungo que causa podridão acinzentada em flores, frutos e folhas. Favorecido por excesso de umidade e ventilação deficiente em ambientes fechados.',
@@ -150,16 +146,14 @@ hipotese(
 % Luminosidade
 %
 
-hipotese(
-    excesso_luz,
+hipotese(excesso_luz,
     'Queimadura por Excesso de Luz Solar',
     luminosidade,
     'Exposição excessiva ao sol direto destrói cloroplastos, causando manchas claras, esbranquiçadas ou amarelas no lado da folha exposto. Mais comum em plantas de sombra expostas ao sol.',
     'Mova a planta para local com luz indireta ou meia-sombra. Instale sombrite se necessário. Mantenha boa hidratação durante a recuperação.'
 ).
  
-hipotese(
-    falta_luz,
+hipotese(falta_luz,
     'Falta de Luminosidade / Etiolamento',
     luminosidade,
     'Sem luz suficiente, a planta não realiza fotossíntese adequada. O caule cresce estiolado (alongado e fino) em direção à luz, e as folhas ficam pálidas e pequenas.',
@@ -171,10 +165,83 @@ hipotese(
 % Solo
 %
 
-hipotese(
-    solo_inadequado,
+hipotese(solo_inadequado,
     'Solo Inadequado / pH Incorreto',
     solo,
     'pH incorreto bloqueia a absorção de nutrientes mesmo com adubação.',
     'Faça análise de pH. Para solo ácido: aplique calcário dolomítico. Para solo alcalino: aplique enxofre agrícola. Considere troca completa do substrato.'
 ).
+
+%
+% Sintomas obrigatórios para cada hipótese
+%
+% sintoma_obrigatorio(+HipoteseId, +SintomaId)
+%
+% Se um dos sintomas obrigatórios estiver ausente, a probabilidade da hipótese torna-se zero e é descartada
+%
+
+% Água
+sintoma_obrigatorio(excesso_agua, solo_encharcado).
+sintoma_obrigatorio(excesso_agua, folhas_murchas_solo_umido).
+ 
+sintoma_obrigatorio(falta_agua, solo_seco).
+sintoma_obrigatorio(falta_agua, folhas_murchas).
+
+% Nutrição: folhas velhas
+sintoma_obrigatorio(deficiencia_nitrogenio, amarelamento_folhas_velhas_generalizado).
+sintoma_obrigatorio(deficiencia_nitrogenio, crescimento_muito_lento).
+ 
+sintoma_obrigatorio(deficiencia_fosforo, coloracao_roxa_avermelhada_folhas_velhas).
+sintoma_obrigatorio(deficiencia_fosforo, crescimento_muito_lento).
+ 
+sintoma_obrigatorio(deficiencia_potassio, necrose_bordas_folhas_velhas).
+sintoma_obrigatorio(deficiencia_potassio, manchas_necroticas_folhas).
+ 
+sintoma_obrigatorio(deficiencia_magnesio, clorose_internerval_folhas_velhas).
+
+% Nutrição: folhas novas
+sintoma_obrigatorio(deficiencia_calcio, necrose_pontas_folhas_novas).
+sintoma_obrigatorio(deficiencia_calcio, folhas_novas_enroladas_deformadas).
+ 
+sintoma_obrigatorio(deficiencia_ferro, clorose_internerval_folhas_novas).
+sintoma_obrigatorio(deficiencia_ferro, nervuras_verdes_tecido_folha_amarelo).
+
+% Pragas
+sintoma_obrigatorio(pulgao, insetos_agrupados_brotos_folhas_novas).
+sintoma_obrigatorio(pulgao, substancia_pegajosa_melada_folhas).
+ 
+sintoma_obrigatorio(acaro, pontilhado_prateado_branco_folhas).
+sintoma_obrigatorio(acaro, teias_finas_face_inferior_folhas).
+ 
+sintoma_obrigatorio(cochonilha, carocinhos_escamas_caule_folhas).
+sintoma_obrigatorio(cochonilha, substancia_pegajosa_melada_folhas).
+ 
+sintoma_obrigatorio(mosca_branca, moscas_brancas_voo_face_inferior).
+sintoma_obrigatorio(mosca_branca, amarelamento_irregular_folhas).
+ 
+sintoma_obrigatorio(lesma_caracol, folhas_com_buracos_e_trilha_viscosa).
+sintoma_obrigatorio(lesma_caracol, danos_noturnos_maiores_manha).
+
+% Doenças
+sintoma_obrigatorio(oidio, po_branco_pulverulento_folhas).
+sintoma_obrigatorio(oidio, alta_umidade_ventilacao_ruim).
+ 
+sintoma_obrigatorio(fumagina, camada_negra_fuliginosa_folhas).
+sintoma_obrigatorio(fumagina, insetos_sugadores_presentes).
+ 
+sintoma_obrigatorio(mancha_foliar, manchas_escuras_aquosas_folhas).
+sintoma_obrigatorio(mancha_foliar, manchas_com_halo_amarelo).
+ 
+sintoma_obrigatorio(mofo_cinzento, mofo_cinza_flores_folhas_frutos).
+sintoma_obrigatorio(mofo_cinzento, alta_umidade_ventilacao_ruim).
+ 
+% Luminosidade
+sintoma_obrigatorio(excesso_luz, manchas_claras_descoradas_expostas_sol).
+sintoma_obrigatorio(excesso_luz, descoloracao_uniforme_lado_sol).
+ 
+sintoma_obrigatorio(falta_luz, caule_estiolado_longo_fino_direcao_luz).
+sintoma_obrigatorio(falta_luz, folhas_pequenas_palidas_cor_verde_fraco).
+ 
+% Solo
+sintoma_obrigatorio(solo_inadequado, multiplas_deficiencias_sem_melhora_adubo).
+sintoma_obrigatorio(solo_inadequado, ph_medido_fora_faixa_ideal).
