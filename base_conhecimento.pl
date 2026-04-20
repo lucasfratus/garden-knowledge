@@ -1,7 +1,7 @@
 % Formato:
 %% hipotese(+Id, +Nome, +Probabilidade, +Categoria, +Descrição, +Recomendação)
 %
-% Probabilidade: varia de 0.0 a 1.0
+% A FAZER: Probabilidade: varia de 0.0 a 1.0
 %
 % OBS: '+' é um padrão de instanciação, utilizado quando o argumento precisa estar completamente instanciado)
 
@@ -113,10 +113,10 @@ hipotese(lesma_ou_caracol,
 %
 % Doenças
 %
-%
+
 hipotese(
     oidio,
-    'Oídio (Erysiphales)',
+    'Oídio',
     doenca,
     'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.,'
     'Aplique fungicida à base de enxofre. Melhore a circulação de ar.'
