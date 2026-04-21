@@ -220,8 +220,8 @@ sintoma_obrigatorio(cochonilha, substancia_pegajosa_melada_folhas).
 sintoma_obrigatorio(mosca_branca, moscas_brancas_voo_face_inferior).
 sintoma_obrigatorio(mosca_branca, amarelamento_irregular_folhas).
  
-sintoma_obrigatorio(lesma_caracol, folhas_com_buracos_e_trilha_viscosa).
-sintoma_obrigatorio(lesma_caracol, danos_noturnos_maiores_manha).
+sintoma_obrigatorio(lesma_ou_caracol, folhas_com_buracos_e_trilha_viscosa).
+sintoma_obrigatorio(lesma_ou_caracol, danos_noturnos_maiores_manha).
 
 % Doenças
 sintoma_obrigatorio(oidio, po_branco_pulverulento_folhas).
@@ -368,3 +368,118 @@ sintoma_opcional(falta_luz, flores_nao_aparecem_botoes_caem).
 sintoma_opcional(solo_inadequado, solo_muito_argiloso_ou_arenoso).
 sintoma_opcional(solo_inadequado, agua_nao_penetra_ou_escoa_demais).
 sintoma_opcional(solo_inadequado, raizes_superficiais_saindo_vaso).
+
+
+%
+% Categoria dos sintomas
+% sintoma_categoria(+IdSintoma, +Categoria)
+%
+
+% Rega/Solo úmido
+sintoma_categoria(solo_encharcado, rega).
+sintoma_categoria(solo_seco, rega).
+sintoma_categoria(rega_diaria_frequente, rega).
+sintoma_categoria(solo_nao_adubado_meses, solo).
+sintoma_categoria(solo_muito_acido, solo).
+sintoma_categoria(solo_calcario_ph_alto, solo).
+sintoma_categoria(solo_arenoso_pobre, solo).
+sintoma_categoria(solo_muito_arenoso, solo).
+sintoma_categoria(solo_muito_argiloso_ou_arenoso, solo).
+sintoma_categoria(agua_nao_penetra_ou_escoa_demais, solo).
+sintoma_categoria(ph_medido_fora_faixa_ideal, solo).
+sintoma_categoria(solo_muito_umido, solo).
+sintoma_categoria(solo_secando_rapidamente, solo).
+sintoma_categoria(solo_seca_rapidamente, solo).
+ 
+% Folhas: aparência geral
+sintoma_categoria(folhas_amarelas, folha).
+sintoma_categoria(folhas_murchas, folha).
+sintoma_categoria(folhas_murchas_solo_umido, folha).
+sintoma_categoria(bordas_pontas_folhas_secas_marrons, folha).
+sintoma_categoria(folhas_caindo, folha).
+sintoma_categoria(terra_soltando_bordas_vaso, folha).
+ 
+% Folhas: deficiências nutricionais
+sintoma_categoria(amarelamento_folhas_velhas_generalizado, nutricao).
+sintoma_categoria(coloracao_roxa_avermelhada_folhas_velhas, nutricao).
+sintoma_categoria(necrose_bordas_folhas_velhas, nutricao).
+sintoma_categoria(manchas_necroticas_folhas, nutricao).
+sintoma_categoria(necrose_pontas_folhas_novas, nutricao).
+sintoma_categoria(clorose_internerval_folhas_velhas, nutricao).
+sintoma_categoria(clorose_internerval_folhas_novas, nutricao).
+sintoma_categoria(nervuras_verdes_tecido_folha_amarelo, nutricao).
+sintoma_categoria(folhas_novas_enroladas_deformadas, nutricao).
+sintoma_categoria(frutos_podridao_apical, nutricao).
+sintoma_categoria(frutos_mal_formados, nutricao).
+sintoma_categoria(raizes_curtas_escuras, raiz).
+sintoma_categoria(atraso_florescimento, flor).
+sintoma_categoria(folhas_velhas_verde_escuras, folha).
+sintoma_categoria(folhas_velhas_bronzeadas, folha).
+ 
+% Caule/raiz
+sintoma_categoria(caule_mole_escurecido_base, caule).
+sintoma_categoria(raizes_escuras_podres_cheiro_ruim, raiz).
+sintoma_categoria(caule_fino_fraco, caule).
+sintoma_categoria(caule_estiolado_longo_fino_direcao_luz, caule).
+sintoma_categoria(ramos_enfraquecidos, caule).
+sintoma_categoria(raizes_superficiais_saindo_vaso, raiz).
+ 
+% Crescimento
+sintoma_categoria(crescimento_muito_lento, crescimento).
+sintoma_categoria(reducao_crescimento, crescimento).
+sintoma_categoria(folhas_novas_pequenas_palidas, crescimento).
+sintoma_categoria(folhas_novas_pequenas, folha).
+sintoma_categoria(planta_frequentemente_doente, geral).
+sintoma_categoria(multiplas_deficiencias_sem_melhora_adubo, solo).
+ 
+% Pragas: insetos visíveis
+sintoma_categoria(insetos_agrupados_brotos_folhas_novas, praga).
+sintoma_categoria(pontilhado_prateado_branco_folhas, praga).
+sintoma_categoria(carocinhos_escamas_caule_folhas, praga).
+sintoma_categoria(moscas_brancas_voo_face_inferior, praga).
+sintoma_categoria(folhas_com_buracos_e_trilha_viscosa, praga).
+ 
+% Pragas: sintomas indiretos
+sintoma_categoria(folhas_enroladas_deformadas_brotos, praga).
+sintoma_categoria(substancia_pegajosa_melada_folhas, praga).
+sintoma_categoria(presenca_formigas_plantas, praga).
+sintoma_categoria(fumagina_fungo_preto_folhas, praga).
+sintoma_categoria(amarelamento_localizado, folha).
+sintoma_categoria(teias_finas_face_inferior_folhas, praga).
+sintoma_categoria(folhas_aspecto_bronzeado_envelhecido, folha).
+sintoma_categoria(clima_quente_seco, ambiente).
+sintoma_categoria(queda_prematura_folhas, folha).
+sintoma_categoria(queda_folhas, folha).
+sintoma_categoria(plantas_enfraquecidas_sem_viço, geral).
+sintoma_categoria(danos_noturnos_maiores_manha, praga).
+sintoma_categoria(local_umido_sombreado, ambiente).
+sintoma_categoria(brotacoes_novas_consumidas, praga).
+sintoma_categoria(insetos_sugadores_presentes, praga).
+sintoma_categoria(folhas_com_aspecto_sujo_enegrecido, doenca).
+sintoma_categoria(amarelamento_irregular_folhas, folha).
+ 
+% Doenças: fungos
+sintoma_categoria(po_branco_pulverulento_folhas, doenca).
+sintoma_categoria(camada_negra_fuliginosa_folhas, doenca).
+sintoma_categoria(manchas_escuras_aquosas_folhas, doenca).
+sintoma_categoria(mofo_cinza_flores_folhas_frutos, doenca).
+sintoma_categoria(folhas_amarelando_sob_po_branco, doenca).
+sintoma_categoria(folhas_secas_caindo_apos_po_branco, doenca).
+sintoma_categoria(caules_com_manchas_brancas, doenca).
+sintoma_categoria(alta_umidade_ventilacao_ruim, ambiente).
+sintoma_categoria(manchas_com_halo_amarelo, doenca).
+sintoma_categoria(folhas_caindo_com_manchas, doenca).
+sintoma_categoria(rega_molhando_folhagem, rega).
+sintoma_categoria(flores_marrons_moles, flor).
+sintoma_categoria(partes_apodrecendo_molengas, doenca).
+sintoma_categoria(ambiente_fechado_sem_ar, ambiente).
+ 
+% Luminosidade
+sintoma_categoria(manchas_claras_descoradas_expostas_sol, luminosidade).
+sintoma_categoria(planta_sol_direto_mais_6h, ambiente).
+sintoma_categoria(bordas_folhas_secas_queimadas, folha).
+sintoma_categoria(descoloracao_uniforme_lado_sol, luminosidade).
+sintoma_categoria(folhas_pequenas_palidas_cor_verde_fraco, folha).
+sintoma_categoria(queda_excessiva_folhas, folha).
+sintoma_categoria(planta_local_escuro_sem_janela, ambiente).
+sintoma_categoria(flores_nao_aparecem_botoes_caem, flor).
