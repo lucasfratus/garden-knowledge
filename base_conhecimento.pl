@@ -11,6 +11,7 @@
 
 hipotese(excesso_agua,
 	 'Excesso de água',
+	 0.90,
 	 quantidade_agua,
 	 'A planta recebe água em excesso, favorecendo podridões'
 ).
@@ -18,6 +19,7 @@ hipotese(excesso_agua,
 hipotese(falta_agua,
 	 'Falta de água',
 	 quantidade_agua,
+	 0.90,
 	 'A plantia recebe quantidade insuficiente de água.'
 ).
 
@@ -28,6 +30,7 @@ hipotese(falta_agua,
 hipotese(deficiencia_nitrogenio,
 	'Deficiência de nitrogênio',
 	nutricao,
+	0.74,
 	'O déficit de nitrogênio causa clorose (perda de pigmento) generalizada, inicialmente nas folhas mais velhas. Causa também redução acentuada do crescimento.'
 ).
 
@@ -35,30 +38,35 @@ hipotese(deficiencia_nitrogenio,
 hipotese(deficiencia_fosforo,
 	'Deficiência de fósforo',
 	nutricao,
+	0.74,
 	'A falta de fósforo causa coloração verde-escura com tons avermelhados/roxos nas folhas mais antigas, além de redução do crescimento'
 ).
 
 hipotese(deficiencia_potassio,
 	'Deficiência de potássio',
 	nutricao,
+	0.76,
 	'A falta de potássio causa clorose e queimadura (necrose) nas bordas de folhas mais velhas.',
 ).
 
 hipotese(deficiencia_calcio,
 	'Deficiência de cálcio',
 	nutricao,
+	0.78,
 	'A falta de cálcio causa necrose nas pontas e bordas de folhas novas. Folhas enroladas também são um sintoma. Pode causar podridão nas pontas de frutos.'
 ).
 
 hipotese(deficiencia_magnesio,
 	'Deficiência de magnésio',
 	nutricao,
+	0.78,
 	'A falta de magnésio causa coloração verde nas nervuras e amarela na área foliar de folhas antigas.'
 ).
 
 hipotese(deficiencia_ferro,
 	'Deficiência de ferro (Clorose Férrica)',
 	nutricao,
+	0.82,
 	'A falta de ferro causa coloração verde nas nervuras e amarela na área foliar de folhas novas. É frequente em solos com pH alto.'
 ).
 
@@ -70,30 +78,35 @@ hipotese(deficiencia_ferro,
 hipotese(pulgao,
 	'Infestação de pulgões',
 	praga,
+	0.93,
 	'Pulgões se concentram em brotos e folhas novas. Atraem formigas.'
 ).
 
 hipotese(cochonilha,
 	'Infestação de cochonilhas',
 	praga,
+	0,92
 	'Cochonilhas fixam-se em caules e folhas. Formigas disseminam a praga.'
 ).
 
 hipotese(acaro,
 	'Infestação de ácaros',
 	praga,
+	0.91,
 	'Ácaros são pragas que sugam seiva e causam pontilhados prateados nas folhas. Profileram em clima quente e seco. Ficam localizados na face interior das folhas.'
 ).
 
 hipotese(mosca_branca,
 	'Infestação de mosca-branca',
 	praga,
+	0,92,
 	'Mosca-branca coloniza a face interior das folhas, causando clorose e transmitindo viroses. Épocas mais secas favorecem a multiplicação. Ataca muitas espécies.'
 ).
 
 hipotese(lesma_ou_caracol,
 	'Ataque de lesmas ou caracóis',
 	praga,
+	0.88,
 	'Lesmas e caracóis são pragas de hábito noturno que raspam e comem folhas e brotos. Preferem ambientes úmidos.'
 ).
 
@@ -105,24 +118,28 @@ hipotese(lesma_ou_caracol,
 hipotese(oidio,
     'Oídio',
     doenca,
-    'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.'
+	0.92,
+	'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.'
 ).
 
 hipotese(fumagina,
     'Fumagina',
     doenca,
+	0.88,
     'Fungo negro que se desenvolve sobre o honeydew excretado por pulgões, cochonilhas ou mosca-branca. Reduz fotossíntese e respiração. Formigas disseminam o fungo.'
 ).
 
 hipotese(mancha_foliar,
     'Manchas Foliares (Fungos/Bactérias)',
     doenca,
+	0.78,
     'Manchas escuras, aquosas ou com halo amarelo indicam fungos ou bactérias que destroem o tecido foliar. Favorecidas por alta umidade e rega por cima (molhando folhagem).'
 ).
 
 hipotese(mofo_cinzento,
     'Mofo Cinzento',
     doenca,
+	0.88,
     'Fungo que causa podridão acinzentada em flores, frutos e folhas. Favorecido por excesso de umidade e ventilação deficiente em ambientes fechados.'
 ).
 
@@ -133,12 +150,14 @@ hipotese(mofo_cinzento,
 hipotese(excesso_luz,
     'Queimadura por Excesso de Luz Solar',
     luminosidade,
+	0.85,
     'Exposição excessiva ao sol direto destrói cloroplastos, causando manchas claras, esbranquiçadas ou amarelas no lado da folha exposto. Mais comum em plantas de sombra expostas ao sol.'
 ).
  
 hipotese(falta_luz,
     'Falta de Luminosidade',
     luminosidade,
+	0.85,
     'Sem luz suficiente, a planta não realiza fotossíntese adequada. O caule cresce estiolado (alongado e fino) em direção à luz, e as folhas ficam pálidas e pequenas'
 ).
 
@@ -150,6 +169,7 @@ hipotese(falta_luz,
 hipotese(solo_inadequado,
     'Solo Inadequado / pH Incorreto',
     solo,
+	0.70,
     'pH incorreto bloqueia a absorção de nutrientes mesmo com adubação.',
 ).
 
