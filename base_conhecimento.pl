@@ -221,11 +221,11 @@ recomendacao(mosca_branca, 3, 'Use inseticida sistêmico (neonicotinoides) em in
 recomendacao(mosca_branca, 4, 'Introduza o parasitoide Encarsia spp. como controle biológico.').
 recomendacao(mosca_branca, 5, 'Evite excesso de nitrogênio, que torna as folhas mais atrativas.').
  
-recomendacao(lesma_caracol, 1, 'Faça coleta manual ao entardecer, quando os animais estão ativos.').
-recomendacao(lesma_caracol, 2, 'Instale armadilhas com cerveja em recipientes rasos enterrados no solo.').
-recomendacao(lesma_caracol, 3, 'Crie barreiras de cal, cinza ou areia grossa ao redor das plantas.').
-recomendacao(lesma_caracol, 4, 'Aplique moluscicida com fosfato férrico (menos tóxico ao ambiente que o metaldeído).').
-recomendacao(lesma_caracol, 5, 'Reduza o excesso de umidade e remova refúgios como folhas mortas e pedras.').
+recomendacao(lesma_ou_caracol, 1, 'Faça coleta manual ao entardecer, quando os animais estão ativos.').
+recomendacao(lesma_ou_caracol, 2, 'Instale armadilhas com cerveja em recipientes rasos enterrados no solo.').
+recomendacao(lesma_ou_caracol, 3, 'Crie barreiras de cal, cinza ou areia grossa ao redor das plantas.').
+recomendacao(lesma_ou_caracol, 4, 'Aplique moluscicida com fosfato férrico (menos tóxico ao ambiente que o metaldeído).').
+recomendacao(lesma_ou_caracol, 5, 'Reduza o excesso de umidade e remova refúgios como folhas mortas e pedras.').
  
 recomendacao(oidio, 1, 'Melhore a circulação de ar ao redor da planta imediatamente.').
 recomendacao(oidio, 2, 'Remova e descarte as partes mais afetadas (não composte).').
