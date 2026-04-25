@@ -1,146 +1,148 @@
+:- dynamic hipotese/5.
+:- dynamic recomendacao/3.
+:- dynamic sintoma_obrigatorio/2.
+:- dynamic sintoma_opcional/2.
+
 % Formato:
-%% hipotese(+Id, +Nome, +Probabilidade, +Categoria, +Descrição)
+%% hipotese(+Id, +Nome, +Categoria, +Probabilidade, +Descrição)
 %
 % A FAZER: Probabilidade: varia de 0.0 a 1.0
 %
-% OBS: '+' é um padrão de instanciação, utilizado quando o argumento precisa estar completamente instanciado)
+% OBS: '+' é um padrão de instanciação, utilizado quando o argumento precisa estar completamente instanciado
 
 %
 % Quantidade de água
 %
 
 hipotese(excesso_agua,
-	 'Excesso de água',
-	 0.90,
-	 quantidade_agua,
-	 'A planta recebe água em excesso, favorecendo podridões'
+     'Excesso de agua',
+     quantidade_agua,
+     0.90,
+     'A planta recebe agua em excesso, favorecendo podridoes.'
 ).
 
 hipotese(falta_agua,
-	 'Falta de água',
-	 quantidade_agua,
-	 0.90,
-	 'A plantia recebe quantidade insuficiente de água.'
+     'Falta de agua',
+     quantidade_agua,
+     0.90,
+     'A plantia recebe quantidade insuficiente de agua.'
 ).
 
 %
-% Nutrição
+% Nutricao
 %
 
 hipotese(deficiencia_nitrogenio,
-	'Deficiência de nitrogênio',
-	nutricao,
-	0.74,
-	'O déficit de nitrogênio causa clorose (perda de pigmento) generalizada, inicialmente nas folhas mais velhas. Causa também redução acentuada do crescimento.'
+    'Deficiencia de nitrogenio',
+    nutricao,
+    0.74,
+    'O deficit de nitrogenio causa clorose (perda de pigmento) generalizada, inicialmente nas folhas mais velhas. Causa tambem reducao acentuada do crescimento.'
 ).
 
-
 hipotese(deficiencia_fosforo,
-	'Deficiência de fósforo',
-	nutricao,
-	0.74,
-	'A falta de fósforo causa coloração verde-escura com tons avermelhados/roxos nas folhas mais antigas, além de redução do crescimento'
+    'Deficiencia de fosforo',
+    nutricao,
+    0.74,
+    'A falta de fosforo causa coloracao verde-escura com tons avermelhados/roxos nas folhas mais antigas, alem de reducao do crescimento.'
 ).
 
 hipotese(deficiencia_potassio,
-	'Deficiência de potássio',
-	nutricao,
-	0.76,
-	'A falta de potássio causa clorose e queimadura (necrose) nas bordas de folhas mais velhas.',
+    'Deficiencia de potassio',
+    nutricao,
+    0.76,
+    'A falta de potassio causa clorose e queimadura (necrose) nas bordas de folhas mais velhas.'
 ).
 
 hipotese(deficiencia_calcio,
-	'Deficiência de cálcio',
-	nutricao,
-	0.78,
-	'A falta de cálcio causa necrose nas pontas e bordas de folhas novas. Folhas enroladas também são um sintoma. Pode causar podridão nas pontas de frutos.'
+    'Deficiencia de calcio',
+    nutricao,
+    0.78,
+    'A falta de calcio causa necrose nas pontas e bordas de folhas novas. Folhas enroladas tambem sao um sintoma. Pode causar podridao nas pontas de frutos.'
 ).
 
 hipotese(deficiencia_magnesio,
-	'Deficiência de magnésio',
-	nutricao,
-	0.78,
-	'A falta de magnésio causa coloração verde nas nervuras e amarela na área foliar de folhas antigas.'
+    'Deficiencia de magnesio',
+    nutricao,
+    0.78,
+    'A falta de magnesio causa coloracao verde nas nervuras e amarela na area foliar de folhas antigas.'
 ).
 
 hipotese(deficiencia_ferro,
-	'Deficiência de ferro (Clorose Férrica)',
-	nutricao,
-	0.82,
-	'A falta de ferro causa coloração verde nas nervuras e amarela na área foliar de folhas novas. É frequente em solos com pH alto.'
+    'Deficiencia de ferro (Clorose Ferrica)',
+    nutricao,
+    0.82,
+    'A falta de ferro causa coloracao verde nas nervuras e amarela na area foliar de folhas novas. Eh frequente em solos com pH alto.'
 ).
-
 
 %
 % Pragas
 %
 
 hipotese(pulgao,
-	'Infestação de pulgões',
-	praga,
-	0.93,
-	'Pulgões se concentram em brotos e folhas novas. Atraem formigas.'
+    'Infestacao de pulgoes',
+    praga,
+    0.93,
+    'Pulgoes se concentram em brotos e folhas novas. Atraem formigas.'
 ).
 
 hipotese(cochonilha,
-	'Infestação de cochonilhas',
-	praga,
-	0,92
-	'Cochonilhas fixam-se em caules e folhas. Formigas disseminam a praga.'
+    'Infestacao de cochonilhas',
+    praga,
+    0.92,
+    'Cochonilhas fixam-se em caules e folhas. Formigas disseminam a praga.'
 ).
 
 hipotese(acaro,
-	'Infestação de ácaros',
-	praga,
-	0.91,
-	'Ácaros são pragas que sugam seiva e causam pontilhados prateados nas folhas. Profileram em clima quente e seco. Ficam localizados na face interior das folhas.'
+    'Infestacao de acaros',
+    praga,
+    0.91,
+    'Acaros sao pragas que sugam seiva e causam pontilhados prateados nas folhas. Profileram em clima quente e seco. Ficam localizados na face interior das folhas.'
 ).
 
 hipotese(mosca_branca,
-	'Infestação de mosca-branca',
-	praga,
-	0,92,
-	'Mosca-branca coloniza a face interior das folhas, causando clorose e transmitindo viroses. Épocas mais secas favorecem a multiplicação. Ataca muitas espécies.'
+    'Infestacao de mosca-branca',
+    praga,
+    0.92,
+    'Mosca-branca coloniza a face interior das folhas, causando clorose e transmitindo viroses. Epocas mais secas favorecem a multiplicacao. Ataca muitas especies.'
 ).
 
 hipotese(lesma_ou_caracol,
-	'Ataque de lesmas ou caracóis',
-	praga,
-	0.88,
-	'Lesmas e caracóis são pragas de hábito noturno que raspam e comem folhas e brotos. Preferem ambientes úmidos.'
+    'Ataque de lesmas ou caracois',
+    praga,
+    0.88,
+    'Lesmas e caracois sao pragas de habito noturno que raspam e comem folhas e brotos. Preferem ambientes umidos.'
 ).
 
-
 %
-% Doenças
+% Doencas
 %
 
 hipotese(oidio,
-    'Oídio',
+    'Oidio',
     doenca,
-	0.92,
-	'Oídio é doença fúngica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e úmidos. Relatado em roseiras, abóboras, ipês e ornamentais.'
+    0.92,
+    'Oidio eh doenca fungica que forma camada branca pulverulenta (aspecto de farinha) em folhas e caules. Se prolifera em climas quentes e umidos. Relatado em roseiras, aboboras, ipes e ornamentais.'
 ).
 
 hipotese(fumagina,
     'Fumagina',
     doenca,
-	0.88,
-    'Fungo negro que se desenvolve sobre o honeydew excretado por pulgões, cochonilhas ou mosca-branca. Reduz fotossíntese e respiração. Formigas disseminam o fungo.'
+    0.88,
+    'Fungo negro que se desenvolve sobre o honeydew excretado por pulgoes, cochonilhas ou mosca-branca. Reduz fotossintese e respiracao. Formigas disseminam o fungo.'
 ).
 
 hipotese(mancha_foliar,
-    'Manchas Foliares (Fungos/Bactérias)',
+    'Manchas Foliares (Fungos/Bacterias)',
     doenca,
-	0.78,
-    'Manchas escuras, aquosas ou com halo amarelo indicam fungos ou bactérias que destroem o tecido foliar. Favorecidas por alta umidade e rega por cima (molhando folhagem).'
+    0.78,
+    'Manchas escuras, aquosas ou com halo amarelo indicam fungos ou bacterias que destroem o tecido foliar. Favorecidas por alta umidade e rega por cima (molhando folhagem).'
 ).
 
 hipotese(mofo_cinzento,
     'Mofo Cinzento',
     doenca,
-	0.88,
-    'Fungo que causa podridão acinzentada em flores, frutos e folhas. Favorecido por excesso de umidade e ventilação deficiente em ambientes fechados.'
+    0.88,
+    'Fungo que causa podridao acinzentada em flores, frutos e folhas. Favorecido por excesso de umidade e ventilacao deficiente em ambientes fechados.'
 ).
 
 %
@@ -150,17 +152,16 @@ hipotese(mofo_cinzento,
 hipotese(excesso_luz,
     'Queimadura por Excesso de Luz Solar',
     luminosidade,
-	0.85,
-    'Exposição excessiva ao sol direto destrói cloroplastos, causando manchas claras, esbranquiçadas ou amarelas no lado da folha exposto. Mais comum em plantas de sombra expostas ao sol.'
+    0.85,
+    'Exposicao excessiva ao sol direto destroi cloroplastos, causando manchas claras, esbranquicadas ou amarelas no lado da folha exposto. Mais comum em plantas de sombra expostas ao sol.'
 ).
- 
+
 hipotese(falta_luz,
     'Falta de Luminosidade',
     luminosidade,
-	0.85,
-    'Sem luz suficiente, a planta não realiza fotossíntese adequada. O caule cresce estiolado (alongado e fino) em direção à luz, e as folhas ficam pálidas e pequenas'
+    0.85,
+    'Sem luz suficiente, a planta nao realiza fotossintese adequada. O caule cresce estiolado (alongado e fino) em direcao a luz, e as folhas ficam palidas e pequenas.'
 ).
-
 
 %
 % Solo
@@ -169,8 +170,8 @@ hipotese(falta_luz,
 hipotese(solo_inadequado,
     'Solo Inadequado / pH Incorreto',
     solo,
-	0.70,
-    'pH incorreto bloqueia a absorção de nutrientes mesmo com adubação.',
+    0.70,
+    'pH incorreto bloqueia a absorcao de nutrientes mesmo com adubacao.'
 ).
 
 
@@ -179,114 +180,114 @@ hipotese(solo_inadequado,
 % recomendacao(+HipoteseId, +Ordem, +Descrição)
 %
 
-recomendacao(excesso_agua, 1, 'Reduza imediatamente a frequência de rega.').
-recomendacao(excesso_agua, 2, 'Verifique se há drenagem adequada no vaso.').
-recomendacao(excesso_agua, 3, 'Remova a planta do substrato e inspecione as raízes.').
-recomendacao(excesso_agua, 4, 'Se houver podridão radicular, corte as raízes escuras e moles com tesoura esterilizada.').
+recomendacao(excesso_agua, 1, 'Reduza imediatamente a frequencia de rega.').
+recomendacao(excesso_agua, 2, 'Verifique se ha drenagem adequada no vaso.').
+recomendacao(excesso_agua, 3, 'Remova a planta do substrato e inspecione as raizes.').
+recomendacao(excesso_agua, 4, 'Se houver podridao radicular, corte as raizes escuras e moles com tesoura esterilizada.').
 recomendacao(excesso_agua, 5, 'Repote em substrato fresco com boa drenagem.').
- 
-recomendacao(falta_agua, 1, 'Aumente imediatamente a frequência de rega.').
-recomendacao(falta_agua, 2, 'Mergulhe o vaso inteiro em água por 10 minutos para reidratar o substrato completamente.').
-recomendacao(falta_agua, 3, 'Após reidratação, deixe escorrer bem antes de retornar ao lugar.').
-recomendacao(falta_agua, 4, 'Monitore o solo diariamente até a planta se recuperar.').
- 
-recomendacao(deficiencia_nitrogenio, 1, 'Aplique adubo nitrogenado foliar para efeito rápido (ureia a 0,5%).').
-recomendacao(deficiencia_nitrogenio, 2, 'Repita a adubação a cada 15 dias durante a fase de crescimento.').
-recomendacao(deficiencia_nitrogenio, 3, 'Certifique-se de que o pH está entre 6,0 e 7,0 para boa absorção.').
- 
+
+recomendacao(falta_agua, 1, 'Aumente imediatamente a frequencia de rega.').
+recomendacao(falta_agua, 2, 'Mergulhe o vaso inteiro em agua por 10 minutos para reidratar o substrato completamente.').
+recomendacao(falta_agua, 3, 'Apos reidratacao, deixe escorrer bem antes de retornar ao lugar.').
+recomendacao(falta_agua, 4, 'Monitore o solo diariamente ate a planta se recuperar.').
+
+recomendacao(deficiencia_nitrogenio, 1, 'Aplique adubo nitrogenado foliar para efeito rapido (ureia a 0,5%).').
+recomendacao(deficiencia_nitrogenio, 2, 'Repita a adubacao a cada 15 dias durante a fase de crescimento.').
+recomendacao(deficiencia_nitrogenio, 3, 'Certifique-se de que o pH esta entre 6,0 e 7,0 para boa absorcao.').
+
 recomendacao(deficiencia_fosforo, 1, 'Aplique superfosfato simples ou fosfato natural ao solo.').
-recomendacao(deficiencia_fosforo, 2, 'Misture bem o fósforo ao substrato, pois ele tem baixa mobilidade no solo.').
-recomendacao(deficiencia_fosforo, 3, 'Verifique e corrija o pH para a faixa 6,0–7,0, que maximiza a absorção de fósforo.').
-recomendacao(deficiencia_fosforo, 4, 'Evite excesso de cálcio ou ferro no solo, que bloqueiam o fósforo.').
- 
-recomendacao(deficiencia_potassio, 1, 'Aplique cloreto de potássio ou sulfato de potássio ao solo.').
-recomendacao(deficiencia_potassio, 2, 'Em solos arenosos, fracione as doses para evitar lixiviação.').
- 
-recomendacao(deficiencia_calcio, 1, 'Aplique calcário dolomítico ao solo para repor cálcio e magnésio simultaneamente.').
-recomendacao(deficiencia_calcio, 2, 'Para ação mais rápida, use cloreto de cálcio em aplicação foliar (0,4%).').
-recomendacao(deficiencia_calcio, 3, 'Mantenha o pH entre 6,0 e 7,0 para absorção adequada.').
-recomendacao(deficiencia_calcio, 4, 'Garanta rega regular: Cálcio é absorvido pelo fluxo de água nas raízes.').
-recomendacao(deficiencia_calcio, 5, 'Evite excesso de potássio ou magnésio, que competem com o cálcio.').
- 
-recomendacao(deficiencia_magnesio, 1, 'Aplique sulfato de magnésio (sal de Epsom) diluído: 1–2 g/L na rega.').
-recomendacao(deficiencia_magnesio, 2, 'Aplique também via foliar para efeito mais rápido (5 g/L de sulfato de magnésio).').
-recomendacao(deficiencia_magnesio, 3, 'Corrija o pH se estiver fora de 5,5–6,5, pois pH baixo reduz absorção de magnésio.').
- 
+recomendacao(deficiencia_fosforo, 2, 'Misture bem o fosforo ao substrato, pois ele tem baixa mobilidade no solo.').
+recomendacao(deficiencia_fosforo, 3, 'Verifique e corrija o pH para a faixa 6,0-7,0, que maximiza a absorcao de fosforo.').
+recomendacao(deficiencia_fosforo, 4, 'Evite excesso de calcio ou ferro no solo, que bloqueiam o fosforo.').
+
+recomendacao(deficiencia_potassio, 1, 'Aplique cloreto de potassio ou sulfato de potassio ao solo.').
+recomendacao(deficiencia_potassio, 2, 'Em solos arenosos, fracione as doses para evitar lixiviacao.').
+
+recomendacao(deficiencia_calcio, 1, 'Aplique calcario dolomitico ao solo para repor calcio e magnesio simultaneamente.').
+recomendacao(deficiencia_calcio, 2, 'Para acao mais rapida, use cloreto de calcio em aplicacao foliar (0,4%).').
+recomendacao(deficiencia_calcio, 3, 'Mantenha o pH entre 6,0 e 7,0 para absorcao adequada.').
+recomendacao(deficiencia_calcio, 4, 'Garanta rega regular: Calcio eh absorvido pelo fluxo de agua nas raizes.').
+recomendacao(deficiencia_calcio, 5, 'Evite excesso de potassio ou magnesio, que competem com o calcio.').
+
+recomendacao(deficiencia_magnesio, 1, 'Aplique sulfato de magnesio (sal de Epsom) diluido: 1-2 g/L na rega.').
+recomendacao(deficiencia_magnesio, 2, 'Aplique tambem via foliar para efeito mais rapido (5 g/L de sulfato de magnesio).').
+recomendacao(deficiencia_magnesio, 3, 'Corrija o pH se estiver fora de 5,5-6,5, pois pH baixo reduz absorcao de magnesio.').
+
 recomendacao(deficiencia_ferro, 1, 'Aplique quelato de ferro foliar (EDDHA ou DTPA) conforme dosagem do produto.').
-recomendacao(deficiencia_ferro, 2, 'O quelato de ferro é mais eficiente que sulfato ferroso em solos com pH alto.').
-recomendacao(deficiencia_ferro, 3, 'Corrija o pH para 5,5–6,5 com enxofre agrícola se o solo estiver alcalino.').
-recomendacao(deficiencia_ferro, 4, 'Evite irrigação excessiva com água calcária, que eleva o pH e bloqueia o Fe.').
- 
-recomendacao(pulgao, 1, 'Aplique jatos de água fortes para remover colônias, especialmente nos brotos.').
-recomendacao(pulgao, 2, 'Aplique óleo de nim (azadiractina) ou sabão potássico a cada 7 dias.').
-recomendacao(pulgao, 3, 'Controle as formigas que protegem os pulgões (elas os disseminam).').
-recomendacao(pulgao, 4, 'Incentive inimigos naturais: joaninhas e crisopídeos são predadores eficazes.').
-recomendacao(pulgao, 5, 'Em infestações severas, use inseticida sistêmico como imidacloprido.').
- 
+recomendacao(deficiencia_ferro, 2, 'O quelato de ferro eh mais eficiente que sulfato ferroso em solos com pH alto.').
+recomendacao(deficiencia_ferro, 3, 'Corrija o pH para 5,5-6,5 com enxofre agricola se o solo estiver alcalino.').
+recomendacao(deficiencia_ferro, 4, 'Evite irrigacao excessiva com agua calcaria, que eleva o pH e bloqueia o Fe.').
+
+recomendacao(pulgao, 1, 'Aplique jatos de agua fortes para remover colonias, especialmente nos brotos.').
+recomendacao(pulgao, 2, 'Aplique oleo de nim (azadiractina) ou sabao potassico a cada 7 dias.').
+recomendacao(pulgao, 3, 'Controle as formigas que protegem os pulgoes (elas os disseminam).').
+recomendacao(pulgao, 4, 'Incentive inimigos naturais: joaninhas e crisopideos sao predadores eficazes.').
+recomendacao(pulgao, 5, 'Em infestacoes severas, use inseticida sistemico como imidacloprido.').
+
 recomendacao(acaro, 1, 'Aumente a umidade ao redor da planta.').
-recomendacao(acaro, 2, 'Aplique acaricida específico ou óleo de nim na face inferior das folhas.').
-recomendacao(acaro, 3, 'Repita a aplicação em 7 dias para eliminar os ovos que eclodirem.').
-recomendacao(acaro, 4, 'Isole a planta infestada para evitar disseminação para outras plantas.').
-recomendacao(acaro, 5, 'Em clima quente e seco, nebulize as folhas diariamente como prevenção.').
- 
-recomendacao(cochonilha, 1, 'Remova manualmente as cochonilhas visíveis com cotonete embebido em álcool.').
-recomendacao(cochonilha, 2, 'Aplique óleo mineral emulsionável (1–2%) para sufocar os insetos.').
-recomendacao(cochonilha, 3, 'Em infestações severas, use inseticida sistêmico.').
+recomendacao(acaro, 2, 'Aplique acaricida especifico ou oleo de nim na face inferior das folhas.').
+recomendacao(acaro, 3, 'Repita a aplicacao em 7 dias para eliminar os ovos que eclodirem.').
+recomendacao(acaro, 4, 'Isole a planta infestada para evitar disseminacao para outras plantas.').
+recomendacao(acaro, 5, 'Em clima quente e seco, nebulize as folhas diariamente como prevencao.').
+
+recomendacao(cochonilha, 1, 'Remova manualmente as cochonilhas visiveis com cotonete embebido em alcool.').
+recomendacao(cochonilha, 2, 'Aplique oleo mineral emulsionavel (1-2%) para sufocar os insetos.').
+recomendacao(cochonilha, 3, 'Em infestacoes severas, use inseticida sistemico.').
 recomendacao(cochonilha, 4, 'Controle as formigas associadas, que disseminam a praga.').
-recomendacao(cochonilha, 5, 'Repita o tratamento semanalmente por 3–4 semanas.').
- 
+recomendacao(cochonilha, 5, 'Repita o tratamento semanalmente por 3-4 semanas.').
+
 recomendacao(mosca_branca, 1, 'Instale armadilhas amarelas adesivas para monitoramento e captura.').
-recomendacao(mosca_branca, 2, 'Aplique sabão potássico na face inferior das folhas (onde os ovos ficam).').
-recomendacao(mosca_branca, 3, 'Use inseticida sistêmico (neonicotinoides) em infestações estabelecidas.').
-recomendacao(mosca_branca, 4, 'Introduza o parasitoide Encarsia spp. como controle biológico.').
-recomendacao(mosca_branca, 5, 'Evite excesso de nitrogênio, que torna as folhas mais atrativas.').
- 
-recomendacao(lesma_ou_caracol, 1, 'Faça coleta manual ao entardecer, quando os animais estão ativos.').
+recomendacao(mosca_branca, 2, 'Aplique sabao potassico na face inferior das folhas (onde os ovos ficam).').
+recomendacao(mosca_branca, 3, 'Use inseticida sistemico (neonicotinoides) em infestacoes estabelecidas.').
+recomendacao(mosca_branca, 4, 'Introduza o parasitoide Encarsia spp. como controle biologico.').
+recomendacao(mosca_branca, 5, 'Evite excesso de nitrogenio, que torna as folhas mais atrativas.').
+
+recomendacao(lesma_ou_caracol, 1, 'Faca coleta manual ao entardecer, quando os animais estao ativos.').
 recomendacao(lesma_ou_caracol, 2, 'Instale armadilhas com cerveja em recipientes rasos enterrados no solo.').
 recomendacao(lesma_ou_caracol, 3, 'Crie barreiras de cal, cinza ou areia grossa ao redor das plantas.').
-recomendacao(lesma_ou_caracol, 4, 'Aplique moluscicida com fosfato férrico (menos tóxico ao ambiente que o metaldeído).').
-recomendacao(lesma_ou_caracol, 5, 'Reduza o excesso de umidade e remova refúgios como folhas mortas e pedras.').
- 
-recomendacao(oidio, 1, 'Melhore a circulação de ar ao redor da planta imediatamente.').
-recomendacao(oidio, 2, 'Remova e descarte as partes mais afetadas (não composte).').
-recomendacao(oidio, 3, 'Aplique fungicida à base de enxofre molhável conforme bula.').
+recomendacao(lesma_ou_caracol, 4, 'Aplique moluscicida com fosfato ferrico (menos toxico ao ambiente que o metaldeido).').
+recomendacao(lesma_ou_caracol, 5, 'Reduza o excesso de umidade e remova refugios como folhas mortas e pedras.').
+
+recomendacao(oidio, 1, 'Melhore a circulacao de ar ao redor da planta imediatamente.').
+recomendacao(oidio, 2, 'Remova e descarte as partes mais afetadas (nao composte).').
+recomendacao(oidio, 3, 'Aplique fungicida a base de enxofre molhavel conforme bula.').
 recomendacao(oidio, 4, 'Evite molhar as folhas ao regar.').
- 
-recomendacao(fumagina, 1, 'Controle primeiro as pragas causadoras (pulgões, cochonilhas ou mosca-branca).').
-recomendacao(fumagina, 2, 'Lave as folhas afetadas com solução de sabão neutro diluído.').
-recomendacao(fumagina, 3, 'Após a limpeza, aplique fungicida cúprico (calda bordalesa).').
+
+recomendacao(fumagina, 1, 'Controle primeiro as pragas causadoras (pulgoes, cochonilhas ou mosca-branca).').
+recomendacao(fumagina, 2, 'Lave as folhas afetadas com solucao de sabao neutro diluido.').
+recomendacao(fumagina, 3, 'Apos a limpeza, aplique fungicida cuprico (calda bordalesa).').
 recomendacao(fumagina, 4, 'Controle as formigas que disseminam as pragas produtoras.').
-recomendacao(fumagina, 5, 'A fumagina some naturalmente após o controle dos insetos sugadores.').
- 
+recomendacao(fumagina, 5, 'A fumagina some naturalmente apos o controle dos insetos sugadores.').
+
 recomendacao(mancha_foliar, 1, 'Remova e descarte imediatamente todas as folhas com manchas.').
 recomendacao(mancha_foliar, 2, 'Evite molhar a folhagem ao regar.').
-recomendacao(mancha_foliar, 3, 'Aplique fungicida cúprico (calda bordalesa) ou bactericida conforme o agente.').
-recomendacao(mancha_foliar, 4, 'Melhore a circulação de ar e reduza a umidade ao redor da planta.').
-recomendacao(mancha_foliar, 5, 'Esterilize tesouras de poda com álcool para evitar transmissão mecânica.').
- 
+recomendacao(mancha_foliar, 3, 'Aplique fungicida cuprico (calda bordalesa) ou bactericida conforme o agente.').
+recomendacao(mancha_foliar, 4, 'Melhore a circulacao de ar e reduza a umidade ao redor da planta.').
+recomendacao(mancha_foliar, 5, 'Esterilize tesouras de poda com alcool para evitar transmissao mecanica.').
+
 recomendacao(mofo_cinzento, 1, 'Remova imediatamente todas as partes afetadas.').
-recomendacao(mofo_cinzento, 2, 'Melhore a ventilação do ambiente urgentemente.').
-recomendacao(mofo_cinzento, 3, 'Reduza a umidade: evite nebulização e molhar as folhas.').
-recomendacao(mofo_cinzento, 4, 'Aplique fungicida sistêmico (iprodione ou tiofanato-metílico) conforme bula.').
-recomendacao(mofo_cinzento, 5, 'Espaçe mais as plantas para aumentar a circulação de ar entre elas.').
- 
+recomendacao(mofo_cinzento, 2, 'Melhore a ventilacao do ambiente urgentemente.').
+recomendacao(mofo_cinzento, 3, 'Reduza a umidade: evite nebulizacao e molhar as folhas.').
+recomendacao(mofo_cinzento, 4, 'Aplique fungicida sistemico (iprodione ou tiofanato-metilico) conforme bula.').
+recomendacao(mofo_cinzento, 5, 'Espace mais as plantas para aumentar a circulacao de ar entre elas.').
+
 recomendacao(excesso_luz, 1, 'Mova a planta imediatamente para local com luz indireta ou meia-sombra.').
-recomendacao(excesso_luz, 2, 'Se não for possível mover, instale sombrite (50%) para filtrar a luz.').
-recomendacao(excesso_luz, 3, 'Mantenha boa hidratação durante a recuperação.').
-recomendacao(excesso_luz, 4, 'Não remova as folhas queimadas imediatamente; elas protegem o tecido saudável.').
+recomendacao(excesso_luz, 2, 'Se nao for possivel mover, instale sombrite (50%) para filtrar a luz.').
+recomendacao(excesso_luz, 3, 'Mantenha boa hidratacao durante a recuperacao.').
+recomendacao(excesso_luz, 4, 'Nao remova as folhas queimadas imediatamente; elas protegem o tecido saudavel.').
 recomendacao(excesso_luz, 5, 'Reintroduza a luz solar gradualmente quando a planta se recuperar.').
- 
-recomendacao(falta_luz, 1, 'Mova a planta para o local mais iluminado disponível, próximo a janelas.').
+
+recomendacao(falta_luz, 1, 'Mova a planta para o local mais iluminado disponivel, proximo a janelas.').
 recomendacao(falta_luz, 2, 'Gire o vaso periodicamente para que todos os lados recebam luz igual.').
-recomendacao(falta_luz, 3, 'Para ambientes sem luz natural, instale lâmpadas de crescimento com espectro completo.').
-recomendacao(falta_luz, 4, 'Mantenha as lâmpadas a 20–30 cm da planta por 12–16 horas por dia.').
-recomendacao(falta_luz, 5, 'Limpe as folhas com pano úmido para maximizar a absorção de luz.').
- 
-recomendacao(solo_inadequado, 1, 'Meça o pH do solo com kit de teste ou pHmetro.').
-recomendacao(solo_inadequado, 2, 'Para solo ácido (pH < 5,5): aplique calcário dolomítico e aguarde 30 dias.').
-recomendacao(solo_inadequado, 3, 'Para solo alcalino (pH > 7,0): aplique enxofre agrícola granulado.').
+recomendacao(falta_luz, 3, 'Para ambientes sem luz natural, instale lampadas de crescimento com espectro completo.').
+recomendacao(falta_luz, 4, 'Mantenha as lampadas a 20-30 cm da planta por 12-16 horas por dia.').
+recomendacao(falta_luz, 5, 'Limpe as folhas com pano umido para maximizar a absorcao de luz.').
+
+recomendacao(solo_inadequado, 1, 'Meca o pH do solo com kit de teste ou phmetro.').
+recomendacao(solo_inadequado, 2, 'Para solo acido (pH < 5,5): aplique calcario dolomitico e aguarde 30 dias.').
+recomendacao(solo_inadequado, 3, 'Para solo alcalino (pH > 7,0): aplique enxofre agricola granulado.').
 recomendacao(solo_inadequado, 4, 'Se o problema persistir, considere a troca completa do substrato.').
-recomendacao(solo_inadequado, 5, 'Use substrato específico para o tipo de planta.').
+recomendacao(solo_inadequado, 5, 'Use substrato especifico para o tipo de planta.').
 
 
 %
@@ -431,7 +432,7 @@ sintoma_opcional(pulgao, amarelamento_localizado).
 sintoma_opcional(acaro, folhas_aspecto_bronzeado_envelhecido).
 sintoma_opcional(acaro, clima_quente_seco).
 sintoma_opcional(acaro, queda_prematura_folhas).
-sintoma_opcional(acaro, plantas_enfraquecidas_sem_viço).
+sintoma_opcional(acaro, plantas_enfraquecidas_sem_vico).
 
 % Cochonilha
 sintoma_opcional(cochonilha, fumagina_fungo_preto_folhas).
@@ -571,7 +572,7 @@ sintoma_categoria(folhas_aspecto_bronzeado_envelhecido, folha).
 sintoma_categoria(clima_quente_seco, ambiente).
 sintoma_categoria(queda_prematura_folhas, folha).
 sintoma_categoria(queda_folhas, folha).
-sintoma_categoria(plantas_enfraquecidas_sem_viço, geral).
+sintoma_categoria(plantas_enfraquecidas_sem_vico, geral).
 sintoma_categoria(danos_noturnos_maiores_manha, praga).
 sintoma_categoria(local_umido_sombreado, ambiente).
 sintoma_categoria(brotacoes_novas_consumidas, praga).
