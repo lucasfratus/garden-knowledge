@@ -339,7 +339,7 @@ listar_perguntas_feitas :-
 
     writeln('Perguntas realizadas durante o diagnostico:'),
     forall(
-        member(S, Unicas),
+        membro(S, Unicas),
         (
             pergunta(S, Texto),
             write('- '), write(S), write(' -> '), writeln(Texto)

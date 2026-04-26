@@ -9,7 +9,7 @@
 obrigatorios_confirmados(Hipotese) :-
     forall(
         sintoma_obrigatorio(Hipotese, Sintoma),
-        resposta(Sintoma, sim)
+		resposta(Sintoma, sim)
     ).
 
 %
@@ -156,11 +156,16 @@ explicar_descarte(Hipotese) :-
         )
     ).
 
+membro(X, [X|_]).
+membro(X, [_|T]) :- membro(X, T).
+
 explicar_pergunta(Sintoma) :-
     pergunta(Sintoma, Texto),
+    sintoma_categoria(Sintoma, Cat),
 
     nl,
     write('Pergunta: '), writeln(Texto),
+    write('Categoria: '), writeln(Cat),
 
     findall(
         Nome,
@@ -177,7 +182,7 @@ explicar_pergunta(Sintoma) :-
         Lista \= [] ->
             writeln('Essa pergunta foi feita porque esta relacionada com a seguinte hipotese:'),
             forall(
-                member(Nome, Lista),
+                membro(Nome, Lista),
                 (
                     write('- '), writeln(Nome)
                 )

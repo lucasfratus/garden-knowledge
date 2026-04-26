@@ -1,9 +1,6 @@
 % Para executar: ?- run_tests.
 % Para executar um grupo: ?- run_tests(nome_do_grupo).
 %
-
-:- consult('base_conhecimento.pl').
-:- consult('motor.pl').
 :- consult('interface.pl').
 :- use_module(library(plunit)).
 
