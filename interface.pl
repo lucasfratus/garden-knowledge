@@ -217,26 +217,26 @@ pergunta(flores_nao_aparecem_botoes_caem,
 :- consult('motor.pl').
 
 realizar_entrevista :-
-    perguntar_sintomas_obrigatorios,
-    perguntar_sintomas_opcionais_relevantes.
+    perguntar_proxima_pergunta.
 
-perguntar_sintomas_obrigatorios :-
-    forall(
-        sintoma_obrigatorio_nao_respondido(Sintoma),
-        (
-            pergunta(Sintoma, Texto),
-            perguntar_sintoma(Sintoma, Texto)
-        )
-    ).
+perguntar_proxima_pergunta :-
+    sintoma_obrigatorio(Hip, Sintoma),
+    hipotese_possivel(Hip),
+    \+ resposta(Sintoma, _),
+    !,
+    pergunta(Sintoma, Texto),
+    perguntar_sintoma(Sintoma, Texto),
+    perguntar_proxima_pergunta.
 
-perguntar_sintomas_opcionais_relevantes :-
-    forall(
-        sintoma_opcional_relevante(Sintoma),
-        (
-            pergunta(Sintoma, Texto),
-            perguntar_sintoma(Sintoma, Texto)
-        )
-    ).
+perguntar_proxima_pergunta :-
+    sintoma_opcional_relevante(Sintoma),
+    \+ resposta(Sintoma, _),
+    !,
+    pergunta(Sintoma, Texto),
+    perguntar_sintoma(Sintoma, Texto),
+    perguntar_proxima_pergunta.
+
+perguntar_proxima_pergunta.
 
 perguntar_sintoma(Sintoma, Texto) :-
     nl,
