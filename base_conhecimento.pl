@@ -4,9 +4,9 @@
 :- dynamic sintoma_opcional/2.
 
 % Formato:
-%% hipotese(+Id, +Nome, +Categoria, +Probabilidade, +Descrição)
+%% hipotese(+Id, +Nome, +Categoria, +ProbabilidadeBase, +Descrição)
 %
-% A FAZER: Probabilidade: varia de 0.0 a 1.0
+% ProbabilidadeBase: varia de 0.0 a 1.0
 %
 % OBS: '+' é um padrão de instanciação, utilizado quando o argumento precisa estar completamente instanciado
 
@@ -294,8 +294,6 @@ recomendacao(solo_inadequado, 5, 'Use substrato especifico para o tipo de planta
 % Sintomas obrigatórios para cada hipótese
 %
 % sintoma_obrigatorio(+HipoteseId, +SintomaId)
-%
-% Se um dos sintomas obrigatórios estiver ausente, a probabilidade da hipótese torna-se zero e a hipótese é descartada
 %
 
 % Água
