@@ -6,7 +6,7 @@
 % Formato:
 %% hipotese(+Id, +Nome, +Categoria, +Probabilidade, +Descrição)
 %
-% A FAZER: Probabilidade: varia de 0.0 a 1.0
+% Probabilidade: varia de 0.0 a 1.0
 %
 % OBS: '+' é um padrão de instanciação, utilizado quando o argumento precisa estar completamente instanciado
 
